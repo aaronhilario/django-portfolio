@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Hilario - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #f39c12;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideDown 0.8s ease;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #f39c12;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            padding: 13px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            border: 2px solid #f39c12;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+            border-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(243, 156, 18, 0.3);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .about h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .about-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .about-card h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .about-card p {
+            color: #555;
+            margin: 0.8rem 0;
+        }
+        
+        .about-card strong {
+            color: #667eea;
+        }
+        
+        /* Skills Section */
+        .skills {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .skills h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .skill-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8eaf6 100%);
+        }
+        
+        .projects h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .project-card h3 {
+            padding: 1.5rem 1.5rem 0.5rem;
+            color: #667eea;
+            font-size: 1.3rem;
+        }
+        
+        .project-card p {
+            padding: 0 1.5rem;
+            color: #666;
+            margin: 1rem 0;
+        }
+        
+        .project-card .btn {
+            display: block;
+            margin: 1.5rem;
+            text-align: center;
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+        
+        .project-card .btn:hover {
+            background-color: #764ba2;
+            border-color: #764ba2;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .contact-card a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .footer-text {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .about h2,
+            .skills h2,
+            .projects h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+            
+            .about-grid,
+            .skills-grid,
+            .projects-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1>Aaron Hilario</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Hi, I'm Aaron Hilario 👋</h2>
+            <p class="subtitle">Second Year BSIT Student</p>
+            <p class="description">Passionate developer creating amazing web experiences</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎓 Education</h3>
+                    <p><strong>School:</strong> STI Santa Maria</p>
+                    <p><strong>Program:</strong> Second Year BSIT</p>
+                    <p><strong>Location:</strong> Santa Maria, Bulacan</p>
+                </div>
+                <div class="about-card">
+                    <h3>💡 About Me</h3>
+                    <p>I'm a passionate learner and developer focusing on web development and creating innovative solutions through technology. Always eager to learn new technologies and improve my skills.</p>
+                </div>
+                <div class="about-card">
+                    <h3>🚀 Goals</h3>
+                    <p>To become a full-stack developer and build impactful applications that solve real-world problems. Committed to continuous learning and growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>HTML</h3>
+                    <p>Semantic markup</p>
+                </div>
+                <div class="skill-item">
+                    <h3>CSS</h3>
+                    <p>Responsive design</p>
+                </div>
+                <div class="skill-item">
+                    <h3>JavaScript</h3>
+                    <p>Interactive features</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Web Design</h3>
+                    <p>UI/UX principles</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Problem Solving</h3>
+                    <p>Logical thinking</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Git</h3>
+                    <p>Version control</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">🌐 Web Project</div>
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive portfolio website showcasing my skills and projects using HTML, CSS, and JavaScript.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">💻 Learning Project</div>
+                    <h3>First Web App</h3>
+                    <p>A beginner web application demonstrating HTML forms, CSS styling, and basic JavaScript interactivity.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">🚀 Upcoming</div>
+                    <h3>Future Project</h3>
+                    <p>Working on exciting new projects. Stay tuned for updates! More projects coming soon as I continue learning.</p>
+                    <a href="#" class="btn">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:aaronhilario74@gmail.com">aaronhilario74@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <h3>📱 Phone</h3>
+                    <a href="tel:09928716958">0992-8716958</a>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Location</h3>
+                    <p>Santa Maria, Bulacan, Philippines</p>
+                </div>
+            </div>
+            <p class="footer-text">© 2025 Aaron Hilario. All rights reserved.</p>
+        </div>
+    </section>
+</body>
+</html>
